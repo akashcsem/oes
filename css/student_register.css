@@ -1,0 +1,81 @@
+/* REGISTATION DESIGN START */
+.signup {
+  height: 300px !important;
+  background: rgba(44, 62, 80, 0.7);
+}
+form {
+  /* width: 240px; */
+  text-align: center;
+}
+input {
+  /* width: 240px; */
+  text-align: center;
+  background: transparent;
+  border-radius: 15px;
+  border: 1px solid #fff;
+  /*    border-bottom:1px solid #fff;
+*/
+  font-family: "play", sans-serif;
+  font-size: 16px;
+  font-weight: 20px;
+  padding: 10px 0;
+  transition: border 0.5s;
+  outline: none;
+  color: #fff;
+}
+div .file {
+  border: none;
+}
+
+input:hover {
+  background: black;
+}
+input[type="button"] {
+  border: none;
+  /* width: 190px; */
+  background: #0ff5e0;
+  color: #000;
+  font-size: 16px;
+  /* line-height: 25px; */
+  padding: 10px 0;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+input[type="button"]:hover {
+  color: #fff;
+  background-color: black;
+}
+a {
+  color: yellow;
+  text-decoration: blink;
+}
+/* input[type="button"] {
+  border: none;
+  width: 190px;
+  background: yellow;
+  color: #000;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  border-radius: 15px;
+  cursor: pointer;
+} */
+/* .file{
+    border none;
+    input:hover none;
+  } */
+input[type="button"]:hover {
+  color: #fff;
+  background-color: black;
+}
+h2 {
+  color: white;
+}
+
+::placeholder {
+  color: aliceblue;
+  opacity: 0.8;
+}
+
+/* END REGISTATION PAGE */

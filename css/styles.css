@@ -1,0 +1,187 @@
+
+#nav-top {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: vardana;
+}
+#main {
+  width: 100%;
+  height: 100vh;
+  background: url(img/a.jpg);
+  background-size: cover;
+}
+
+nav {
+  width: 100%;
+  height: 80px;
+  background-color: #0005;
+  line-height: 80px;
+}
+nav ul {
+  float: none;
+  margin-right: 30px;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  transform: 0.8s all;
+}
+nav ul li:hover {
+  background: #a4a4a4;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 30px;
+}
+
+form {
+  float: right;
+  margin-top: 0px;
+  margin-right: 10px;
+}
+
+input {
+  padding: 3px;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+  font-family: sans-serif;
+}
+button {
+  float: right;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  position: relative;
+  padding: 3px;
+  font-family: sans-serif;
+  font-size: 24px;
+  margin-top: 17px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 0px;
+  background-color: green;
+}
+
+/*dropdown*/
+.dropbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  color: white;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  padding: 10px;
+  min-width: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 5px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #76d7c4;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover {
+  background: #a4a4a4;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+/*.dropdown:hover */
+.dropbtn:hover {
+  background-color: #3e8e41;
+}
+
+.heading {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 50px;
+  font-size: 60px;
+  font-family: Serif;
+  margin-bottom: 20px;
+  color: white;
+}
+.ab {
+  font-size: 30px;
+  font-family: serif;
+  color: white;
+}
+.ab p {
+  padding: 15px;
+}
+/*grid start */
+
+.grid_container {
+  background: #0005;
+  height: 250px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 40px;
+}
+.grid-item {
+  padding: 30px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+.fp {
+  padding: 5px;
+}
+.grid-item a h3 {
+  text-align: center;
+  color: white;
+}
+
+p a {
+  padding: 12px;
+}
+.fa {
+  border-radius: 5px !important;
+  font-size: 20px !important;
+  color: white !important;
+}
+
+/* END GRID DESIGN */
+
+/* FOOTER START */
+
+.main-footer {
+  background: #0009;
+  height: 60px;
+}
+.footer {
+  text-align: center;
+  color: white;
+  padding: 25px;
+}
+
+/* footer end */
