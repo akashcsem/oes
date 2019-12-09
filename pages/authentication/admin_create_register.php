@@ -104,7 +104,17 @@ if (isset($_POST['admin_register'])) {
             try {
                 $stmt = $conn->prepare($sql);
                 $stmt->execute();
+
                 if ($stmt->rowCount()) {
+                    $sql    = "SELECT * FROM teachers ORDER BY id DESC LIMIT 1";
+                    $result = $conn->query($sql)->fetch();
+                    session_start();
+                    $_SESSION['userid'] = $result['id'];
+                    $_SESSION['usertype'] = "teacher";
+                    $_SESSION['username'] = $username;
+                    $_SESSION['teacher_name'] = $result['firstname'] . " " . $result['lastname'];
+    
+                    header('location: ../teacher/home.php');
                     echo '<div class="row">
                         <div class="container">
                             <h3 class="text-center text-success"> Teacher registerd successfull</h3>

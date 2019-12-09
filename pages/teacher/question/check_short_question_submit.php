@@ -38,8 +38,8 @@ if (isset($_POST['check_submit_short_question'])) {
 
             // get subject_id from exam table
             $sql = "SELECT * FROM exams WHERE id = $exam_id";
-            $subject = $conn->query($mcq_questions_query)->fetch();
-            $subject_id = $subject['id'];
+            $subject = $conn->query($sql)->fetch();
+            $subject_id = $subject['subject_id'];
 
             // update result
             $date = date("Y-m-d");

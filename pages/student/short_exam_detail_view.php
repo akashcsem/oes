@@ -81,7 +81,7 @@
                         <table>
                               <tr>
                                     <td>
-                                          <h5 class="d-block"><?php echo $key+1 . '. ' . $question['question']; ?></h5>
+                                          <h5 class="d-block"><?php echo $key+1 . '. ' . htmlspecialchars($question['question']); ?></h5>
                                     </td>
                               </tr>
                               <tr>

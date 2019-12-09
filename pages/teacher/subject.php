@@ -115,7 +115,7 @@
 
                       <?php } if (count($subjects) < 1) { ?>
                       <tr>
-                        <td colspan="6"><h3 class="text-center">No subject</h3></td>
+                        <td colspan="7"><h3 class="text-center">No subject</h3></td>
                       </tr>
                       <?php } ?>
 

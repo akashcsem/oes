@@ -55,19 +55,16 @@
                   $stmt_exam_details_query = $conn->prepare($exam_details_query);
                   $stmt_exam_details_query->execute();
 
-                  // increment total participant into exams table
-                  $update_total_participant_query = "UPDATE `exams` SET `total_participant` = `total_participant` + '1' WHERE `exams`.`id` = $exam_id";
-                  $stmt = $conn->prepare($sql);
-                  $stmt->execute();
 
                   // get subject_id from exam table
                   $sql = "SELECT * FROM exams WHERE id = $exam_id";
-                  $subject = $conn->query($mcq_questions_query)->fetch();
-                  $subject_id = $subject['id'];
-                  
+                  $subject = $conn->query($sql)->fetch();
+                  $subject_id = $subject['subject_id'];
+
                   // update result
                   $date = date("Y-m-d");
-                  $update_result_query = "INSERT INTO `results` (`exam_id`, `student_id`, `subject_id`, `achieve_mark`, `test_date`) VALUES ('$exam_id', '$student_id', '$subject_id', '$total_correct', $date)";
+                  // $update_result_query = "INSERT INTO `results` (`exam_id`, `student_id`, `subject_id`, `achieve_mark`, `test_date`) VALUES ('$exam_id', '$student_id', '$subject_id', '$total_correct', '$date')";
+                  $update_result_query = "INSERT INTO `results` (`exam_id`, `student_id`, `subject_id`, `achieve_mark`, `test_date`) VALUES ('$exam_id', '$student_id', '$subject_id', '$total_correct', '$date')";
                   $stmt = $conn->prepare($update_result_query);
                   $stmt->execute();
 

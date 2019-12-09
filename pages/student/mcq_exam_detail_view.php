@@ -85,7 +85,7 @@
                         <table>
                               <tr>
                                     <td colspan="3">
-                                          <h4 class="d-block"><?php echo $key+1 . '. ' . $question['question']; ?></h4>
+                                          <h4 class="d-block"><?php echo $key+1 . '. ' . htmlspecialchars($question['question']); ?></h4>
                                     </td>
                               </tr>
                               <tr>
@@ -95,7 +95,7 @@
                                           </span>      
                                     </td>
                                     <td> A. </td>
-                                    <td class="text-<?php if($question['answer'] == "a") echo "success"; ?>" ><?php echo $question['option_1']; ?></td>
+                                    <td class="text-<?php if($question['answer'] == "a") echo "success"; ?>" ><?php echo htmlspecialchars($question['option_1']); ?></td>
                               </tr>
                               <tr>
                                     <td>
@@ -104,7 +104,7 @@
                                           </span>  
                                     </td>
                                     <td> B. </td>
-                                    <td class="text-<?php if($question['answer'] == "b") echo "success"; ?>" ><?php echo $question['option_2']; ?></td>
+                                    <td class="text-<?php if($question['answer'] == "b") echo "success"; ?>" ><?php echo htmlspecialchars($question['option_2']); ?></td>
                               </tr>
                               <tr>
                                     <td>
@@ -113,7 +113,7 @@
                                           </span>  
                                     </td>
                                     <td> C. </td>
-                                    <td class="text-<?php if($question['answer'] == "c") echo "success"; ?>" ><?php echo $question['option_3']; ?></td>
+                                    <td class="text-<?php if($question['answer'] == "c") echo "success"; ?>" ><?php echo htmlspecialchars($question['option_3']); ?></td>
                               </tr>
                               <tr>
                                     <td>
@@ -122,7 +122,7 @@
                                           </span>  
                                     </td>
                                     <td> D. </td>
-                                    <td class="text-<?php if($question['answer'] == "d") echo "success"; ?>" ><?php echo $question['option_4']; ?></td>
+                                    <td class="text-<?php if($question['answer'] == "d") echo "success"; ?>" ><?php echo htmlspecialchars($question['option_4']); ?></td>
                               </tr>
                         </table>
                   </div>

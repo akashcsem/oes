@@ -137,7 +137,7 @@ include '../../pdo_connect.php';
             <?php } ?>
             
             <div>
-                  <input type="submit" class="btn btn-sm btn-outline-primary float-left" name="update_check_submit_short_question" value="Submit">
+                  <input type="submit" class="btn btn-sm btn-outline-primary float-left" name="check_submit_short_question" value="Submit">
             </div>
       </form>
         </div>

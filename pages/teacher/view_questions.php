@@ -105,15 +105,15 @@ include '../../pdo_connect.php';
         <?php if ($exam_type == 'MCQ') { ?>
             <?php foreach ($questions as $key => $question) { ?>
                   <div class="col-12 pl-5">
-                        <p style="font-weight:bold"><span><?php echo $key+1 . '. '; ?></span><?php echo $question['question']; ?></p>
+                        <p style="font-weight:bold"><span><?php echo $key+1 . '. '; ?></span><?php echo htmlspecialchars($question['question']); ?></p>
                         
-                        <p style="margin-left:20px; margin-top: -12px"> <span <?php if($question['answer'] == 'a') { echo 'class="p-1 bg-success"'; } ?>>A.</span> <?php echo $question['option_1']; ?></p>
+                        <p style="margin-left:20px; margin-top: -12px"> <span <?php if($question['answer'] == 'a') { echo 'class="p-1 bg-success"'; } ?>>A.</span> <?php echo htmlspecialchars($question['option_1']); ?></p>
 
-                        <p style="margin-left:20px; margin-top: -12px"> <span <?php if($question['answer'] == 'b') { echo 'class="p-1 bg-success"'; } ?>>B.</span> <?php echo $question['option_2']; ?></p>
+                        <p style="margin-left:20px; margin-top: -12px"> <span <?php if($question['answer'] == 'b') { echo 'class="p-1 bg-success"'; } ?>>B.</span> <?php echo htmlspecialchars($question['option_2']); ?></p>
 
-                        <p style="margin-left:20px; margin-top: -12px"> <span <?php if($question['answer'] == 'c') { echo 'class="p-1 bg-success"'; } ?>>C.</span> <?php echo $question['option_3']; ?></p>
+                        <p style="margin-left:20px; margin-top: -12px"> <span <?php if($question['answer'] == 'c') { echo 'class="p-1 bg-success"'; } ?>>C.</span> <?php echo htmlspecialchars($question['option_3']); ?></p>
 
-                        <p style="margin-left:20px; margin-top: -12px"> <span <?php if($question['answer'] == 'd') { echo 'class="p-1 bg-success"'; } ?>>D.</span> <?php echo $question['option_4']; ?></p>
+                        <p style="margin-left:20px; margin-top: -12px"> <span <?php if($question['answer'] == 'd') { echo 'class="p-1 bg-success"'; } ?>>D.</span> <?php echo htmlspecialchars($question['option_4']); ?></p>
 
                         <p <?php if($user_id != $teacher_id) echo "hidden"; ?>>
                               <span><a class="btn btn-sm btn-outline-info px-3 py-0" href="mcq_question_edit.php?exam_id=<?php echo $exam_id; ?>&&question_id=<?php echo $question['id']; ?>">Edit</a></span>
@@ -131,11 +131,11 @@ include '../../pdo_connect.php';
                         <?php echo $key+1 . '. '; ?>
                     </span>
                     <span class="text-primary">
-                        <?php echo $question['question']; ?>
+                        <?php echo htmlspecialchars($question['question']); ?> 
                     </span>
                   </p>
 
-                  <p style="margin-left:20px; margin-top: -12px"><b>Preferable Answer:</b> <?php echo $question['preferable_answer']; ?></p>
+                  <p style="margin-left:20px; margin-top: -12px"><b>Preferable Answer:</b> <?php echo htmlspecialchars($question['preferable_answer']); ?></p>
                   <p style="margin-left:20px; margin-top: -12px"><b>Mark:</b> <?php echo $question['mark']; ?></p>
 
                   <p <?php if($user_id != $teacher_id) echo "hidden"; ?>>

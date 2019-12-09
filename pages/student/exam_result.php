@@ -5,14 +5,12 @@
     if (isset($_GET['exam_id'])) { 
       $exam_id = $_GET['exam_id'];
 
-      echo $exam_id;
 
       $sql  = "SELECT * FROM exams WHERE id = $exam_id";
       $exam   = $conn->query($sql)->fetch();
 
       $sql = "SELECT results.*, students.firstname, students.lastname, subjects.name, subjects.code FROM `results` INNER JOIN students ON results.student_id = students.id INNER JOIN subjects ON results.subject_id = subjects.id WHERE results.exam_id = $exam_id ORDER BY results.achieve_mark DESC";
       $results   = $conn->query($sql)->fetchAll();
-      print_r($results);
     }
 ?>
 
