@@ -8,7 +8,7 @@ include 'new_exam/delete_exam.php';
 $id = $_SESSION['userid'];
 
 // get all exam list 
-$sql   = "SELECT exams.*, subjects.name as 'subject_name', teachers.firstname as 'firstname', teachers.lastname as 'lastname'  FROM `exams` INNER JOIN subjects ON exams.subject_id=subjects.id INNER JOIN teachers ON exams.teacher_id=teachers.id ORDER BY total_participant DESC, `id` DESC LIMIT 50";
+$sql   = "SELECT exams.*, subjects.name as 'subject_name', teachers.firstname as 'firstname', teachers.lastname as 'lastname'  FROM `exams` INNER JOIN subjects ON exams.subject_id=subjects.id INNER JOIN teachers ON exams.teacher_id=teachers.id ORDER BY exams.id DESC, `id` DESC LIMIT 50";
 $exams = $conn->query($sql)->fetchAll();
 
 ?>

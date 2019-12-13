@@ -5,7 +5,7 @@ session_start();
       include '../../pdo_connect.php';
 
 
-      $sql   = "SELECT exams.*, subjects.name AS subject_name, teachers.firstname AS firstname, teachers.lastname AS lastname FROM `exams` LEFT JOIN subjects ON exams.subject_id = subjects.id LEFT JOIN teachers ON exams.teacher_id = teachers.id";
+      $sql   = "SELECT exams.*, subjects.name AS subject_name, teachers.firstname AS firstname, teachers.lastname AS lastname FROM `exams` LEFT JOIN subjects ON exams.subject_id = subjects.id LEFT JOIN teachers ON exams.teacher_id = teachers.id ORDER BY exams.id DESC";
       $exams = $conn->query($sql)->fetchAll();
 
       $is_participate = Array();

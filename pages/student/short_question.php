@@ -50,10 +50,13 @@ background-attachment: fixed; background-size: cover;
         <div class="container">
           <h3 class="font-weight-bold text-center mt-3">SHORT QUESTION TEST -- ON -- "<span style="text-transform:uppercase"><?php echo $subject_name; ?></span>"</h3>
           
+          
+          <!-- display time -->
           <div class="clock text-center mt-0 time-left">
               Time left 
-              <span class="exam_hour"><?php echo $exam['hour']; ?></span> hour : 
-              <span class="exam_minute"><?php echo $exam['minute']; ?></span> Minute
+              <span class="exam_hour"><?php echo $exam['hour']; ?></span> h : 
+              <span class="exam_minute"><?php echo $exam['minute']; ?></span> m : 
+              <span class="exam_second">60</span> s
           </div>
           
           
@@ -98,15 +101,22 @@ background-attachment: fixed; background-size: cover;
 
 
 
-
   <script>
     var x = setInterval(function() {
 
     $(document).ready(function(){
       var exam_hour = parseInt($(".exam_hour").text());
       var exam_minute = parseInt($(".exam_minute").text());
+      var exam_second = parseInt($(".exam_second").text());
 
       
+      if (exam_second == 0) {
+        if (exam_minute > 0) {
+            exam_second = 60;
+              exam_minute--;
+          }
+      }
+
       if (exam_minute == 0) {
         if (exam_hour > 0) {
             exam_minute = 60;
@@ -117,21 +127,23 @@ background-attachment: fixed; background-size: cover;
       
     
       // If the count down is over, write some text 
-      if (exam_minute <= 0) {
+      if (exam_second <= 0) {
           $(".exam_hour").text("Expired");
           $(".exam_panel").hide();
           $(".exam_hour").hide();
           $(".exam_minute").hide();
+          $(".exam_second").hide();
           $(".time-left").empty();
           $(".time-left").text("Time over, please submit");
       } else {
           $(".exam_hour").text(exam_hour);
-          exam_minute--;
           $(".exam_minute").text(exam_minute);
+          exam_second--;
+          $(".exam_second").text(exam_second);
           
       }
     });
-  }, 1000);
+  }, 100);
 </script>
 </body>
 

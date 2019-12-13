@@ -8,7 +8,7 @@ include 'new_exam/delete_exam.php';
 $id = $_SESSION['userid'];
 $exam_type = "Short Question";
 // get all exam list 
-$sql   = "SELECT exam_details.*, exams.title AS 'exam_title', students.firstname AS 'firstname', students.lastname AS 'lastname' FROM `exam_details` INNER JOIN students ON exam_details.student_id=students.id INNER JOIN exams ON exam_details.exam_id=exams.id WHERE `exam_details`.`teacher_id` = $id  ORDER BY is_checked";
+$sql   = "SELECT exam_details.*, exams.title AS 'exam_title', students.firstname AS 'firstname', students.lastname AS 'lastname' FROM `exam_details` INNER JOIN students ON exam_details.student_id=students.id INNER JOIN exams ON exam_details.exam_id=exams.id WHERE `exam_details`.`teacher_id` = $id  ORDER BY is_checked, exam_details.id DESC";
 
 $exams = $conn->query($sql)->fetchAll();
 $subjects_name = Array();

@@ -4,8 +4,10 @@
       // stablish connection
       include '../../../pdo_connect.php';
 
+      
+
       if (isset($_POST['submit_mcq'])) {
-            
+           
             $exam_id      = $_POST['exam_id'];
             $student_id   = $_SESSION['ssn_student_id'];
 

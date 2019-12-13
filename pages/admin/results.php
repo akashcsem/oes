@@ -115,10 +115,6 @@
                             <label for="title">Student ID </label>
                             <input type="text" class="form-control" id="title" placeholder="Student ID">
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="file">Name</label>
-                            <input type="file" class="form-control" id="file">
-                        </div> -->
                         <div class="form-group">
                             <label for="title">Name </label>
                             <input type="text" class="form-control" id="title" placeholder="Name">

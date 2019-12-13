@@ -57,8 +57,9 @@ background-attachment: fixed; background-size: cover;
           <!-- display time -->
           <div class="clock text-center mt-0 time-left">
               Time left 
-              <span class="exam_hour"><?php echo $exam['hour']; ?></span> hour : 
-              <span class="exam_minute"><?php echo $exam['minute']; ?></span> Minute
+              <span class="exam_hour"><?php echo $exam['hour']; ?></span> h : 
+              <span class="exam_minute"><?php echo $exam['minute']; ?></span> m : 
+              <span class="exam_second">60</span> s
           </div>
 
 
@@ -118,15 +119,33 @@ background-attachment: fixed; background-size: cover;
   <?php include 'partials/js.php'; ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+    $(".option").click(function(){
+      var ans = $(this).val();
+      $(this).parent().parent().parent().find('.input_answer').val(ans);
+      console.log($(this).parent().parent().parent().find('.input_answer').val());
+    });
+  });
+</script>
   <script>
     var x = setInterval(function() {
 
     $(document).ready(function(){
       var exam_hour = parseInt($(".exam_hour").text());
       var exam_minute = parseInt($(".exam_minute").text());
+      var exam_second = parseInt($(".exam_second").text());
 
       
+      if (exam_second == 0) {
+        if (exam_minute > 0) {
+            exam_second = 60;
+              exam_minute--;
+          }
+      }
+
       if (exam_minute == 0) {
         if (exam_hour > 0) {
             exam_minute = 60;
@@ -137,21 +156,23 @@ background-attachment: fixed; background-size: cover;
       
     
       // If the count down is over, write some text 
-      if (exam_minute <= 0) {
+      if (exam_second <= 0) {
           $(".exam_hour").text("Expired");
           $(".exam_panel").hide();
           $(".exam_hour").hide();
           $(".exam_minute").hide();
+          $(".exam_second").hide();
           $(".time-left").empty();
           $(".time-left").text("Time over, please submit");
       } else {
           $(".exam_hour").text(exam_hour);
-          exam_minute--;
           $(".exam_minute").text(exam_minute);
+          exam_second--;
+          $(".exam_second").text(exam_second);
           
       }
     });
-  }, 1000);
+  }, 100);
 </script>
 </body>
 
